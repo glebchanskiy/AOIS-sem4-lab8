@@ -11,9 +11,21 @@ import org.glebchanskiy.associativeprocessor.enums.Store;
 public class Application {
 
     public static void main(String... args) {
+        printTask0();
         printTask1();
         printTask2();
         printTask3();
+    }
+
+    private static void printTask0() {
+        AssociativeMemory memory = new AssociativeMemoryImpl();
+        AssociativeProcessor processor = new AssociativeProcessorImpl(memory);
+
+        System.out.println("Associative Memory Array: " + memory);
+
+        System.out.println("\nИз-за сложности восприятия диагональной адресации, далее будет применяться формат Нормального отображения:");
+        System.out.println("(Логи чтения из памяти появляются из-за использования метода read в memoryAsNormal()\n");
+        System.out.println(processor.memoryAsNormal());
     }
 
     private static void printTask1() {
